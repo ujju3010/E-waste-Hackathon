@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Locator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="images/logo.jpg" alt="WasteWise Logo" class="logo">
+            <div class="website-name">WasteWise</div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="store.html">STORE</a></li>
+                <li><a href="store-locator.html">SERVICES</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="store-locator">
+        <div id="map" style="height: 500px;"></div>
+        <div class="store-list">
+            <div class="store" id="store1">
+                <h3>Store 1</h3>
+                <p>Address: [Random Address]</p>
+                <p>Timings: 9:00 AM - 9:00 PM</p>
+                <p>Contact: 1234567890</p>
+                <img src="images/store1.jpg" alt="Store 1 Image">
+            </div>
+            <div class="store" id="store2">
+                <h3>Store 2</h3>
+                <p>Address: [Random Address]</p>
+                <p>Timings: 10:00 AM - 8:00 PM</p>
+                <p>Contact: 0987654321</p>
+                <img src="images/store2.jpg" alt="Store 2 Image">
+            </div>
+            <div class="store" id="store3">
+                <h3>Store 3</h3>
+                <p>Address: [Random Address]</p>
+                <p>Timings: 11:00 AM - 7:00 PM</p>
+                <p>Contact: 1122334455</p>
+                <img src="images/store3.png" alt="Store 3 Image">
+            </div>
+        </div>
+    </section>
+
+    <script src="store-locator.js"></script>
+</body>
+</html>
