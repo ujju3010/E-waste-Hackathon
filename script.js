@@ -15,3 +15,22 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', onScroll);
     onScroll(); // Trigger the function on page load to check the initial position
 });
+// Update price range label dynamically
+document.getElementById('priceRange').addEventListener('input', function() {
+    document.getElementById('priceValue').innerText = this.value;
+});
+
+// Add hover effect to pop out the service card
+const serviceCards = document.querySelectorAll('.service-card');
+
+serviceCards.forEach(card => {
+    card.addEventListener('mouseover', function() {
+        this.style.transform = 'scale(1.05)';
+        this.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';
+    });
+
+    card.addEventListener('mouseout', function() {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+    });
+});
