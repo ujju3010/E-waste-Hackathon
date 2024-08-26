@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Diagnostic - WasteWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://i.ibb.co/hXxkJN7/logo.jpg" alt="WasteWise Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="diagnostic.html">Diagnostics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1>Device Diagnostic</h1>
+            <p>Manually enter the status of each component below.</p>
+        </div>
+    </section>
+
+    <section class="diagnostic-form">
+        <div class="form-container">
+            <form id="diagnosticForm">
+                <!-- Battery Health -->
+                <div class="form-group">
+                    <label for="battery">Battery Health:</label>
+                    <select id="battery">
+                        <option value="ok">OK</option>
+                        <option value="needs-calibration">Needs Calibration</option>
+                        <option value="replace-soon">Replace Soon</option>
+                        <option value="not-ok">Not OK</option>
+                    </select>
+                </div>
+
+                <!-- Screen Condition -->
+                <div class="form-group">
+                    <label for="screen">Screen Condition:</label>
+                    <select id="screen">
+                        <option value="ok">OK</option>
+                        <option value="scratches">Scratches</option>
+                        <option value="cracked">Cracked</option>
+                        <option value="not-ok">Not OK</option>
+                    </select>
+                </div>
+
+                <!-- Connectivity -->
+                <div class="form-group">
+                    <label for="connectivity">Connectivity (Wi-Fi/Bluetooth):</label>
+                    <select id="connectivity">
+                        <option value="ok">OK</option>
+                        <option value="intermittent">Intermittent</option>
+                        <option value="not-working">Not OK</option>
+                    </select>
+                </div>
+
+                <!-- Speaker and Microphone -->
+                <div class="form-group">
+                    <label for="speaker">Speaker and Microphone:</label>
+                    <select id="speaker">
+                        <option value="ok">OK</option>
+                        <option value="low-volume">Low Volume</option>
+                        <option value="distorted">Distorted</option>
+                        <option value="not-ok">Not OK</option>
+                    </select>
+                </div>
+
+                <!-- Physical Condition -->
+                <div class="form-group">
+                    <label for="physical">Physical Condition (Body/Casing):</label>
+                    <select id="physical">
+                        <option value="ok">OK</option>
+                        <option value="minor-scratches">Minor Scratches</option>
+                        <option value="dents">Dents</option>
+                        <option value="major-damage">Major Damage</option>
+                        <option value="not-ok">Not OK</option>
+                    </select>
+                </div>
+
+                <!-- Camera Functionality -->
+                <div class="form-group">
+                    <label for="camera">Camera Functionality:</label>
+                    <select id="camera">
+                        <option value="ok">OK</option>
+                        <option value="blurry">Blurry</option>
+                        <option value="not-working">Not OK</option>
+                    </select>
+                </div>
+
+                <!-- Button Responsiveness -->
+                <div class="form-group">
+                    <label for="buttons">Button Responsiveness (Power, Volume, etc.):</label>
+                    <select id="buttons">
+                        <option value="ok">OK</option>
+                        <option value="stiff">Stiff</option>
+                        <option value="not-working">Not OK</option>
+                    </select>
+                </div>
+
+                <!-- Charging Port Condition -->
+                <div class="form-group">
+                    <label for="charging-port">Charging Port Condition:</label>
+                    <select id="charging-port">
+                        <option value="ok">OK</option>
+                        <option value="loose">Loose</option>
+                        <option value="not-charging">Not OK</option>
+                    </select>
+                </div>
+
+                <!-- Software Performance -->
+                <div class="form-group">
+                    <label for="software">Software Performance:</label>
+                    <select id="software">
+                        <option value="smooth">Smooth</option>
+                        <option value="lagging">Lagging</option>
+                        <option value="crashes">Not OK</option>
+                    </select>
+                </div>
+
+                <!-- Storage Capacity -->
+                <div class="form-group">
+                    <label for="storage">Storage Capacity:</label>
+                    <select id="storage">
+                        <option value="ok">OK</option>
+                        <option value="low">Low</option>
+                        <option value="full">Not OK</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-button">Submit Diagnostics</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('diagnosticForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Check if any of the selected options are not "OK"
+            const formElements = this.elements;
+            let redirectToActionPage = false;
+
+            for (let i = 0; i < formElements.length; i++) {
+                if (formElements[i].type === 'select-one' && formElements[i].value !== 'ok') {
+                    redirectToActionPage = true;
+                    break;
+                }
+            }
+
+            if (redirectToActionPage) {
+                window.location.href = 'action.html';
+            } else {
+                alert('Your device is in good condition!');
+            }
+        });
+    </script>
+</body>
+</html>
