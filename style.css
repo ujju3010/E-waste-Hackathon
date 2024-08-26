@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', serif;
+    background: url('images/grassy-field-near-grassy-mountain-cloudy-sky.jpg') no-repeat center center/cover;
+    color: white;
+
+}
+
+body#home-page header {
+    height: 100px; /* Set height to 100px on the home page */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(182, 2, 2, 0.5);
+
+}
+
+body#store-page header {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(10, 3, 3, 0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo {
+    width: 50px;
+}
+
+.website-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-left: 15px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+    transition: color 0.3s;
+}
+
+.hero-section {
+    height: 120vh; /* Full height minus header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeInUp 2s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+
+.header-content {
+    text-align: center;
+    margin-bottom: 100px;
+    animation: fadeInUp 2s ease-out;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+}
+
+.store-container {
+    display: flex;
+    padding: 20px;
+    align-items: flex-start;
+    height: calc(100vh - 100px); /* Adjust based on the header height */
+    background: url('images/recyclebg.jpg') no-repeat center center/cover;
+}
+
+.filter-section {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-right: 20px;
+    border-radius: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+.filter-section h2 {
+    font-family: 'Poppins', serif;
+    font-size: 1.5rem;
+}
+
+.filter-group h3 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.products-section {
+    flex: 3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    flex: 1 1 200px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    min-width: 250px;
+    max-width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: fadeInUp 2s ease-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain; /* No cropping */
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    font-family: 'Poppins', serif;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.description {
+    color: grey;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.cart-btn {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', serif;
+}
+
+.cart-btn:hover {
+    background-color: #f39c12;
+    transition: background-color 0.3s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Us Section */
+.about-us-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: url('images/background.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 125vh
+}
+
+.about-us-content {
+    max-width: 50%;
+}
+
+.about-us-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.about-us-content p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-us-image {
+    max-width: 30%;
+    
+}
+
+.about-us-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: fadeInLeft 5s forwards;
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: fadeInRight 5s forwards;
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#process-background {
+    background-image: url('images/green.jpg'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+}
+
+.flow-process {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto; /* Center the process flow chart */
+    width: 100%; /* Adjust width as needed */
+    max-width: 1350px; /* Limit the maximum width */
+}
+
+.flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 15%;
+    opacity: 0; /* Start hidden */
+    transform: translateY(50px); /* Start slightly below the original position */
+    background: rgba(245, 240, 240, 0.9); /* Optional: Add a semi-transparent background to steps */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(114, 44, 44, 0.1); /* Optional: Add a shadow for depth */
+}
+
+.flow-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px;
+    opacity: 0; /* Start hidden */
+    transform: translateY(50px); /* Start slightly below the original position */
+    animation: fade-up 5s forwards;
+
+}
+
+/* Initial hidden state for flow steps and images */
+.flow-step,
+.flow-img {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 2s ease-out;
+}
+
+/* Visible state - triggered by JavaScript */
+.flow-step.visible,
+.flow-img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.flow-text h3 {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    color: #0a0303; /* Adjust text color if needed */
+}
+
+.flow-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 10px;
+    color: #701212; /* Adjust text color if needed */
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fade-in 2s forwards;
+}
+
+.fade-up {
+    animation: fade-up 2s forwards;
+}
+
+.store-locator {
+    background: url('images/18759.jpg') no-repeat center center/cover;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#map {
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+}
+
+.store-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.store {
+    background: rgba(182, 57, 57, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    width: 30%;
+}
+
+.store img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+
+
