@@ -4,132 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redeem Coupons - WasteWise</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<style>
-    /* Style the body to have a black background */
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-color: #121212; /* Dark background */
-        color: #ffffff; /* White text */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-    }
-
-    /* Style the header */
-    header {
-        width: 100%;
-        background-color: #1e1e1e;
-        padding: 20px 0;
-        text-align: center;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    header nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 50px;
-    }
-
-    header .logo {
-        height: 50px;
-    }
-
-    header .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-    }
-
-    header .nav-links li {
-        display: inline;
-    }
-
-    header .nav-links a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 16px;
-        padding: 8px 16px;
-        border-radius: 4px;
-    }
-
-    header .nav-links a:hover {
-        background-color: #333333;
-    }
-
-    /* Style the top panel */
-    .top-panel {
-        background-color: #1e1e1e; /* Dark gray background for the coupon section */
-        padding: 40px; /* Increase padding */
-        border-radius: 12px;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-        text-align: center;
-        width: 80%; /* Increase width */
-        max-width: 1200px; /* Set a maximum width */
-        margin-top: 20px;
-    }
-
-    /* Style the container that holds the coupons */
-    .coupons-container {
-        display: flex;
-        justify-content: space-around;
-        gap: 40px; /* Increase gap between coupons */
-        margin-top: 30px;
-    }
-
-    /* Style individual coupon cards */
-    .coupon-card {
-        background-color: #333333; /* Darker gray background for each coupon card */
-        padding: 20px; /* Increase padding */
-        border-radius: 10px;
-        width: 250px; /* Increase width */
-        text-align: center;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Style the text inside the coupon cards */
-    .coupon-card h3 {
-        font-size: 24px; /* Increase font size for the discount text */
-        margin: 10px 0;
-    }
-
-    .coupon-card p {
-        font-size: 18px; /* Increase font size for the code text */
-    }
-
-    /* Style the redeem button */
-    .redeem-button {
-        background-color: #4CAF50; /* Green button */
-        color: white;
-        padding: 14px; /* Increase padding */
-        font-size: 18px; /* Increase font size */
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 15px;
-    }
-
-    .redeem-button:hover {
-        background-color: #45a049; /* Slightly darker green on hover */
-    }
-
-    /* Style the message displayed at the bottom */
-    #message {
-        display: none;
-        position: fixed;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-    }
-</style>
 <body>
 
     <!-- Header Section -->
@@ -151,19 +27,19 @@
         <h2>Available Coupons</h2>
         <div class="coupons-container">
             <div class="coupon-card">
-                <img src="WhatsApp Image 2024-08-26 at 09.17.35 (1).jpeg" alt="Coupon 1 Logo">
+                <img src="WhatsApp Image 2024-08-26 at 09.17.35 (1).jpeg" alt="Coupon 1 Logo" class="coupon-image">
                 <h3>30% Off</h3>
                 <p id="coupon-code-1">Use code: WASTE10</p>
                 <button class="redeem-button" onclick="redeemCoupon('WASTE10')">Redeem</button>
             </div>
             <div class="coupon-card">
-                <img src="WhatsApp Image 2024-08-26 at 09.17.35 (2).jpeg" alt="Coupon 2 Logo">
+                <img src="WhatsApp Image 2024-08-26 at 09.17.35 (2).jpeg" alt="Coupon 2 Logo" class="coupon-image">
                 <h3>40% Off</h3>
                 <p id="coupon-code-2">Use code: DIAG15</p>
                 <button class="redeem-button" onclick="redeemCoupon('DIAG15')">Redeem</button>
             </div>
             <div class="coupon-card">
-                <img src="WhatsApp Image 2024-08-26 at 09.17.35.jpeg" alt="Coupon 3 Logo">
+                <img src="WhatsApp Image 2024-08-26 at 09.17.35.jpeg" alt="Coupon 3 Logo" class="coupon-image">
                 <h3>50% Off</h3>
                 <p id="coupon-code-3">Use code: FREEPICKUP</p>
                 <button class="redeem-button" onclick="redeemCoupon('FREEPICKUP')">Redeem</button>
@@ -178,23 +54,24 @@
 
     <!-- JavaScript for redirecting and copying to clipboard -->
     <script>
-        function redeemCoupon(couponCode) {
-            // Copy coupon code to clipboard
-            navigator.clipboard.writeText(couponCode).then(() => {
-                // Show the message at the bottom
-                const message = document.getElementById('message');
-                message.style.display = 'block';
-                setTimeout(() => {
-                    message.style.display = 'none';
-                }, 3000); // Hide the message after 3 seconds
+    function redeemCoupon(couponCode) {
+        // Copy coupon code to clipboard
+        navigator.clipboard.writeText(couponCode).then(() => {
+            // Show the message at the bottom
+            const message = document.getElementById('message');
+            message.style.display = 'block';
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 3000); // Hide the message after 3 seconds
 
-                // Delay the redirect to the shop page by 2 seconds
-                setTimeout(() => {
-                    window.location.href = 'store.html'; // Update this URL to your shop page
-                }, 2000); // 2-second delay before redirecting
-            });
-        }
-    </script>
+            // Delay the redirect to the shop page by 2 seconds
+            setTimeout(() => {
+                window.location.href = 'store.html'; // Update this URL to your shop page
+            }, 2000); // 2-second delay before redirecting
+        });
+    }
+</script>
+
 
 </body>
 </html>
