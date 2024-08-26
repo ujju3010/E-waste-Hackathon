@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - WasteWise</title>
+    <title>Schedule Pickup - WasteWise</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
-    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-        <!-- Rest of your head content -->
-
-    
 </head>
 <body>
     <header>
@@ -23,42 +18,63 @@
                 <li><a href="store.html">Store</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="diagnostic.html">Diagnostics</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero-section">
         <div class="hero-text">
-            <h1>Our Services</h1>
-            <p>Choose from a variety of services we offer to manage your e-waste responsibly.</p>
+            <h1>Schedule a Pickup</h1>
+            <p>Manage your pickups effortlessly with our scheduling system.</p>
         </div>
     </section>
 
-    <section class="services">
-        <div class="services-container">
-            <div class="service-card">
-                <h2>Device Diagnostic</h2>
-                <p>Get an in-depth diagnostic of your devices.</p>
-                <a href="diagnostic.html" class="service-button">Get Diagnostic</a>
-            </div>
-            
-        <div class="service-card">
-            <h2>Schedule a Pickup</h2>
-            <p>We offer scheduled pickups for your e-waste.</p>
-            <button class="service-button" onclick="window.location.href='schedule-pickup.html'">Schedule Now</button>
+    <section class="pickup-container">
+        <!-- Recent Activity -->
+        <div class="pickup-card">
+            <h2>Recent Activity</h2>
+            <p>View your recent pickups and activity.</p>
+            <button class="submit-button">View Activity</button>
         </div>
-        <div class="service-card">
-            <h2>Nearby Booths</h2>
-            <p>Locate the nearest e-waste recycling booths.</p>
-            <button class="service-button">Search</button>
+
+        <!-- Book Your Pickup -->
+        <div class="pickup-card">
+            <h2>Book Your Pickup</h2>
+            <form id="pickupForm">
+                <label for="pickup-date">Select Date:</label>
+                <input type="date" id="pickup-date" name="pickup-date" required>
+
+                <label for="pickup-time">Select Time:</label>
+                <input type="time" id="pickup-time" name="pickup-time" required>
+
+                <button type="submit" class="submit-button">Book Pickup</button>
+            </form>
         </div>
+
+        <!-- Booked Slot -->
+        <div class="pickup-card" id="booked-slot">
+            <h2>Booked Slots</h2>
+            <p>No pickups scheduled yet.</p>
         </div>
-        
-        
-        
-        
     </section>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('pickupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting in the traditional way
+
+            // Get the selected date and time
+            const selectedDate = document.getElementById('pickup-date').value;
+            const selectedTime = document.getElementById('pickup-time').value;
+
+            // Update the Booked Slot section
+            const bookedSlot = document.getElementById('booked-slot');
+            bookedSlot.innerHTML = `
+                <h2>Booked Slots</h2>
+                <p>Your next pickup is scheduled for:</p>
+                <p><strong>${selectedDate}</strong> at <strong>${selectedTime}</strong></p>
+            `;
+        });
+    </script>
 </body>
 </html>
